@@ -47,7 +47,19 @@ public class Auteur {
         return paysOrigine;
     }
 
-    private void setPaysOrigine(Pays paysOrigine) {
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Auteur auteur = (Auteur) o;
+        return Objects.equals(prenom, auteur.prenom) && Objects.equals(nom, auteur.nom) && Objects.equals(paysOrigine, auteur.paysOrigine);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(prenom, nom, paysOrigine);
+    }
+
+    public void setPaysOrigine(Pays paysOrigine) {
         this.paysOrigine = paysOrigine;
     }
 
@@ -56,17 +68,4 @@ public class Auteur {
         return prenom + " " + nom + " (origine : " + paysOrigine + ")";
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Auteur)) return false;
-
-        Auteur auteur = (Auteur) o;
-        return prenom.equals(auteur.prenom) && nom.equals(auteur.nom) && Objects.equals(paysOrigine, auteur.paysOrigine);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(prenom, nom, paysOrigine);
-    }
 }

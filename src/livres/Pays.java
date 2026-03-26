@@ -1,7 +1,4 @@
 package livres;
-
-import java.util.WeakHashMap;
-
 public class Pays
 {
     private String nom;
@@ -38,7 +35,7 @@ public class Pays
     public Boolean verifierCodePays(String codePays)
     {
         Boolean estValide = false;
-        if (codePays.matches("[A-Z]{3}"))
+        if ( (codePays.matches("[A-Z]{3}")))
         {
                 estValide = true;
 

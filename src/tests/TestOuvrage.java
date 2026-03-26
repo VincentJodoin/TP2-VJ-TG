@@ -28,7 +28,6 @@ public class TestOuvrage {
         //Deux auteurs deja prets pour les tests...
         Auteur albertine = new Auteur("Albertine", "Tremblay", new Pays("CAN", "Canada"));
         Auteur john = new Auteur("John", "Smith", new Pays("USA", "États-Unis"));
-
         //Voici une partie des tests! Il faut en ajouter, pour les fonctionnalités non testées!
         System.out.println("-----Test des constructeurs d'ouvrage et des diverses validations-----------");
         Ouvrage livreA = new Ouvrage("Titre assez long", john);
