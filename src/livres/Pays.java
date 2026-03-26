@@ -1,5 +1,7 @@
 package livres;
 
+import java.util.WeakHashMap;
+
 public class Pays
 {
     private String nom;
@@ -36,16 +38,22 @@ public class Pays
     public Boolean verifierCodePays(String codePays)
     {
         Boolean estValide = false;
-        if (codePays.length() == 3)
+        if (codePays.matches("[A-Z]{3}"))
         {
-            if (codePays.matches("[A-Z]"))
-            {
                 estValide = true;
-            }
+
         }
         else {
             System.out.println("Code du pays invalide.");
         }
         return estValide;
+    }
+
+    @Override
+    public String toString() {
+        return "Pays{" +
+                "nom='" + nom + '\'' +
+                ", codePays='" + codePays + '\'' +
+                '}';
     }
 }

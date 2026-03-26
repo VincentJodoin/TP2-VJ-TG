@@ -1,11 +1,13 @@
 package tests;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import livres.Ouvrage;
 import livres.Auteur;
 import livres.Pays;
+import livres.Serie;
 
 /**
  * CoursPOO 1
@@ -87,6 +89,17 @@ public class TestOuvrage {
         System.out.println("Test de la méthode equals d'bibliotheque.Ouvrage:" + !livre4.equals("Test"));
 
         // Test créer une série
+        System.out.println("\n-----Tests série-----------");
+
+        ArrayList<Ouvrage> test = new ArrayList<>();
+
+        test.add(livre3);
+        test.add(livre2);
+        Serie serie = new Serie(test, "Test");
+        System.out.println(serie.toString());
+
+        test.remove(livre2);
+        System.out.println(serie.toString());
 
 
     }
